@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Currency Converter{% endblock %}
+
+{% block content %}
+
+<div>
+<h1>Currency Converter</h1>
+<div>
+    {% for each_msg in msg%}
+    <h2>{{each_msg}}</h2>
+    {% endfor %}
+</div>
+<!-- alert message -->
+<div id = "border">
+<!-- currency form -->
+<form action = "/result" method="POST" >
+    <div class = "form-style">
+        <label>Converting from</label>
+        <input  name="currency" placeholder="Currency" autofocus>
+    </div>
+    <div class = "form-style">
+        <label>Converting to</label>
+        <input name="newCurrency" placeholder="Currency" autofocus>
+    </div>
+    <div class = "form-style">
+        <label>Amount</label>
+        <input name="amount" placeholder="number" autofocus>
+    </div>
+    <div class = "form-style">
+        <button>Convert</button>
+    </div>
+</form>
+</div>
+</div>
+{% endblock %}
